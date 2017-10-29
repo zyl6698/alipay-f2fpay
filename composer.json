@@ -1,0 +1,25 @@
+{
+    "name": "yalv/alipay-f2fpay",
+    "type": "library",
+    "description": "A library to use alipay-f2fpay",
+    "keywords": ["alipay","f2fpay","yalv"],
+    "homepage": "https://yalv.me",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yalv",
+            "email": "yalv@yalv.me",
+            "homepage": "https://yalv.me",
+            "role": "Developer"        
+        }
+    ],
+    "require:": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "alipay-f2fpay\\": "src/"
+        },
+        }
+    }
+}
