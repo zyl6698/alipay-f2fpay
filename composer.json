@@ -20,5 +20,5 @@
         "psr-4": {
             "alipay-f2fpay\\": "src/"
         }
-    },
+    }
 }
