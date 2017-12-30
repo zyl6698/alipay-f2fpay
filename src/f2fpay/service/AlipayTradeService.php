@@ -366,8 +366,8 @@ class AlipayTradeService {
 	 * $margin：生成的二维码离边框的距离
 	 */
 	function create_erweima($content, $size = '200', $lev = 'L', $margin= '0') {
-		$content = urlencode($content);
-		$image = '<img src="http://chart.apis.google.com/chart?chs='.$size.'x'.$size.'&amp;cht=qr&chld='.$lev.'|'.$margin.'&amp;chl='.$content.'"  widht="'.$size.'" height="'.$size.'" />';
+		$url = urlencode($content);
+		$image = '<a href="'.$content.'" target="_blank"><img src="https://pan.baidu.com/share/qrcode?w='.$size.'&amp;h='.$size.'&amp;url='.$url.'"  widht="'.$size.'" height="'.$size.'" />';
 		return $image;
 	}
 	
