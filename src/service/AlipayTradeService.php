@@ -260,7 +260,11 @@ class AlipayTradeService {
 	 * $lev：可选参数，纠错等级
 	 * $margin：生成的二维码离边框的距离
 	 */
+<<<<<<< HEAD:src/service/AlipayTradeService.php
 		function create_erweima($content, $size = '200', $lev = 'L', $margin= '0') {
+=======
+	function create_erweima($content, $size = '200', $lev = 'L', $margin= '0') {
+>>>>>>> 727026dabcea2e47ef8413503ba81e95e1fd87e1:src/f2fpay/service/AlipayTradeService.php
 		$url = urlencode($content);
 		$image = '<a href="'.$content.'" target="_blank"><img src="https://pan.baidu.com/share/qrcode?w='.$size.'&amp;h='.$size.'&amp;url='.$url.'"  widht="'.$size.'" height="'.$size.'" />';
 		return $image;
