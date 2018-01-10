@@ -1,7 +1,7 @@
 {
     "name": "yalv/alipay-f2fpay",
     "type": "library",
-    "description": "A library to use alipay-f2fpay",
+    "description": "A library to use alipay-f2fpay for ss-panel-mod-with-f2fpay",
     "keywords": ["alipay","f2fpay","yalv"],
     "homepage": "https://yalv.me",
     "license": "MIT",
@@ -13,12 +13,10 @@
             "role": "Developer"        
         }
     ],
-    "require:": {
+    "require": {
         "php": ">=5.4"
     },
     "autoload": {
-        "psr-4": {
-            "alipay-f2fpay\\": "src/"
-        }
+        "classmap": ["src/"]
     }
 }
