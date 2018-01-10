@@ -1,7 +1,7 @@
 <?php 
 header("Content-type: text/html; charset=utf-8");
-require_once 'src/model/builder/AlipayTradePrecreateContentBuilder.php';
-require_once 'src/service/AlipayTradeService.php';
+require_once '../src/model/builder/AlipayTradePrecreateContentBuilder.php';
+require_once '../src/service/AlipayTradeService.php';
 
 if (!empty($_POST['out_trade_no'])&& trim($_POST['out_trade_no'])!=""){
 	// (必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线，
