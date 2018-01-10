@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.member.card.query request
- *
- * @author auto create
- * @since 1.0, 2014-06-12 17:16:27
- */
+
 class AlipayMemberCardQueryRequest
 {
 	/** 

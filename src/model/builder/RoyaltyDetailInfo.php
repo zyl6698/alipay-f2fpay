@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xudong.ding
- * Date: 16/5/20
- * Time: 上午11:33
- */
+
 
 class RoyaltyDetailInfo
 {

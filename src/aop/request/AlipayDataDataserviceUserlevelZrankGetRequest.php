@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.data.dataservice.userlevel.zrank.get request
- *
- * @author auto create
- * @since 1.0, 2016-05-11 15:53:08
- */
+
 class AlipayDataDataserviceUserlevelZrankGetRequest
 {
 	/** 

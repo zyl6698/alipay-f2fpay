@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.micropay.order.unfreeze request
- *
- * @author auto create
- * @since 1.0, 2016-01-14 17:45:06
- */
+
 class AlipayMicropayOrderUnfreezeRequest
 {
 	/** 

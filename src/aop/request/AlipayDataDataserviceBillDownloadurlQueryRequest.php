@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.data.dataservice.bill.downloadurl.query request
- *
- * @author auto create
- * @since 1.0, 2016-05-04 20:09:47
- */
+
 class AlipayDataDataserviceBillDownloadurlQueryRequest
 {
 	/** 

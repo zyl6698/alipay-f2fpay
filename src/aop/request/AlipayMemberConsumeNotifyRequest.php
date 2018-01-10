@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.member.consume.notify request
- *
- * @author auto create
- * @since 1.0, 2014-12-09 14:01:31
- */
+
 class AlipayMemberConsumeNotifyRequest
 {
 	/** 

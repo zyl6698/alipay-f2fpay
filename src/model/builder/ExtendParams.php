@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: airwalk
- * Date: 16/5/19
- * Time: 下午3:56
- */
+
 
 class ExtendParams
 {

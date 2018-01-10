@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xudong.ding
- * Date: 16/5/19
- * Time: 下午2:09
- */
+
 class GoodsDetail
 {
     // 商品编号(国标)

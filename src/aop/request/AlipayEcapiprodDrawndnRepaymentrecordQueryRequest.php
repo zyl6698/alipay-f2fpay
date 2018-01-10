@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.ecapiprod.drawndn.repaymentrecord.query request
- *
- * @author auto create
- * @since 1.0, 2016-03-29 11:34:40
- */
+
 class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest
 {
 	/** 

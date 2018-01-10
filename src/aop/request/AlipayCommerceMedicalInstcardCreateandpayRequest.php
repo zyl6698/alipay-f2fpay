@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.commerce.medical.instcard.createandpay request
- *
- * @author auto create
- * @since 1.0, 2016-03-25 21:58:09
- */
+
 class AlipayCommerceMedicalInstcardCreateandpayRequest
 {
 	/** 

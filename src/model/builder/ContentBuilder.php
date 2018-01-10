@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: xudong.ding
- * Date: 16/6/27
- * Time: 下午3:31
- */
+
 class ContentBuilder
 {
     //第三方应用授权令牌

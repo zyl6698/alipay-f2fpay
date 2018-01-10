@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.commerce.educate.studentinfo.share request
- *
- * @author auto create
- * @since 1.0, 2016-04-19 16:32:26
- */
+
 class AlipayCommerceEducateStudentinfoShareRequest
 {
 

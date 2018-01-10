@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.marketing.cdp.advertise.create request
- *
- * @author auto create
- * @since 1.0, 2016-04-11 17:40:34
- */
+
 class AlipayMarketingCdpAdvertiseCreateRequest
 {
 	/** 

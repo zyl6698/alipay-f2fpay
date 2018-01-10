@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.member.coupon.querylist request
- *
- * @author auto create
- * @since 1.0, 2014-11-19 15:53:19
- */
+
 class AlipayMemberCouponQuerylistRequest
 {
 	/** 

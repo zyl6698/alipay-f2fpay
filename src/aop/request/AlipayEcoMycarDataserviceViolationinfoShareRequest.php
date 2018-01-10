@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.eco.mycar.dataservice.violationinfo.share request
- *
- * @author auto create
- * @since 1.0, 2016-05-12 09:57:29
- */
+
 class AlipayEcoMycarDataserviceViolationinfoShareRequest
 {
 	/** 

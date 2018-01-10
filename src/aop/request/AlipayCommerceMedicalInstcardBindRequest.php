@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.commerce.medical.instcard.bind request
- *
- * @author auto create
- * @since 1.0, 2016-03-25 22:06:30
- */
+
 class AlipayCommerceMedicalInstcardBindRequest
 {
 	/** 

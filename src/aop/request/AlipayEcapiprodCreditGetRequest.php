@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.ecapiprod.credit.get request
- *
- * @author auto create
- * @since 1.0, 2015-04-02 16:44:25
- */
+
 class AlipayEcapiprodCreditGetRequest
 {
 	/** 

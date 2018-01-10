@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.commerce.medical.card.query request
- *
- * @author auto create
- * @since 1.0, 2016-04-12 16:37:49
- */
+
 class AlipayCommerceMedicalCardQueryRequest
 {
 	/** 

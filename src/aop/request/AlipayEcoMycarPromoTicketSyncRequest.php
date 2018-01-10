@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.eco.mycar.promo.ticket.sync request
- *
- * @author auto create
- * @since 1.0, 2016-05-12 09:57:58
- */
+
 class AlipayEcoMycarPromoTicketSyncRequest
 {
 	/** 

@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.marketing.campaign.activity.offline.trigger request
- *
- * @author auto create
- * @since 1.0, 2016-04-01 15:37:17
- */
+
 class AlipayMarketingCampaignActivityOfflineTriggerRequest
 {
 	/** 

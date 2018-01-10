@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.member.card.deletecard request
- *
- * @author auto create
- * @since 1.0, 2014-12-01 11:13:25
- */
+
 class AlipayMemberCardDeletecardRequest
 {
 	/** 

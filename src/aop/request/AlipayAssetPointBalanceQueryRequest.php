@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.asset.point.balance.query request
- *
- * @author auto create
- * @since 1.0, 2016-03-02 16:11:30
- */
+
 class AlipayAssetPointBalanceQueryRequest
 {
 

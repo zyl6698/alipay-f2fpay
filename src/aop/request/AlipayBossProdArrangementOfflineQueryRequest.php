@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.boss.prod.arrangement.offline.query request
- *
- * @author auto create
- * @since 1.0, 2015-10-15 20:59:49
- */
+
 class AlipayBossProdArrangementOfflineQueryRequest
 {
 

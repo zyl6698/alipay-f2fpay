@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.data.dataservice.chinaremodel.query request
- *
- * @author auto create
- * @since 1.0, 2016-05-11 15:49:11
- */
+
 class AlipayDataDataserviceChinaremodelQueryRequest
 {
 	/** 

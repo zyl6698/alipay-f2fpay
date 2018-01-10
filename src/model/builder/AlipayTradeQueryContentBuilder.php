@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xudong.ding
- * Date: 16/5/19
- * Time: 下午2:09
- */
+
 require_once 'ContentBuilder.php';
 
 class AlipayTradeQueryContentBuilder extends ContentBuilder

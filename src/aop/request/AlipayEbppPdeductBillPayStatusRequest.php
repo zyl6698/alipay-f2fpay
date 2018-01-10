@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.ebpp.pdeduct.bill.pay.status request
- *
- * @author auto create
- * @since 1.0, 2015-01-16 22:48:35
- */
+
 class AlipayEbppPdeductBillPayStatusRequest
 {
 	/** 

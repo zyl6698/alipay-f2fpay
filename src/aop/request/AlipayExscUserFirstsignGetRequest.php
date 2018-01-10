@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.exsc.user.firstsign.get request
- *
- * @author auto create
- * @since 1.0, 2014-10-30 22:35:00
- */
+
 class AlipayExscUserFirstsignGetRequest
 {
 	/** 

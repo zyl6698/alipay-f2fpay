@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.mobile.beacon.device.modify request
- *
- * @author auto create
- * @since 1.0, 2015-02-03 19:48:29
- */
+
 class AlipayMobileBeaconDeviceModifyRequest
 {
 	/** 

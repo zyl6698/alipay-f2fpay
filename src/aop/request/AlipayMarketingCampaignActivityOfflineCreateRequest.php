@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.marketing.campaign.activity.offline.create request
- *
- * @author auto create
- * @since 1.0, 2016-05-09 20:13:53
- */
+
 class AlipayMarketingCampaignActivityOfflineCreateRequest
 {
 	/** 

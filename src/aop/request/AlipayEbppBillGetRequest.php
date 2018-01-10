@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.ebpp.bill.get request
- *
- * @author auto create
- * @since 1.0, 2016-04-18 11:59:10
- */
+
 class AlipayEbppBillGetRequest
 {
 	/** 

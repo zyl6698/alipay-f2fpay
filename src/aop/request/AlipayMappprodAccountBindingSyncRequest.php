@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.mappprod.account.binding.sync request
- *
- * @author auto create
- * @since 1.0, 2014-09-11 09:38:13
- */
+
 class AlipayMappprodAccountBindingSyncRequest
 {
 	/** 

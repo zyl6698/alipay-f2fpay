@@ -1,10 +1,5 @@
 <?php
-/**
- * ALIPAY API: alipay.exsc.user.currentsign.get request
- *
- * @author auto create
- * @since 1.0, 2014-10-30 22:34:50
- */
+
 class AlipayExscUserCurrentsignGetRequest
 {
 	/** 
