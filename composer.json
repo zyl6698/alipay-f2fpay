@@ -17,7 +17,6 @@
         "php": ">=5.4"
     },
     "autoload": {
-        "classmap": ["src/f2fpay/"],
-        "files" : ["src/aop/AopClient.php"]
+        "classmap": ["src/f2fpay/"]
     }
 }
