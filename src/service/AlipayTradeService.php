@@ -5,14 +5,11 @@
  * Date: 16/5/19
  * Time: 下午2:09
  */
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../model/result/AlipayF2FPayResult.php';
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/result/AlipayF2FQueryResult.php';
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/result/AlipayF2FRefundResult.php';
+require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../AopSdk.php';
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/result/AlipayF2FPrecreateResult.php';
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/builder/AlipayTradeQueryContentBuilder.php';
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/builder/AlipayTradeCancelContentBuilder.php';
-//require dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../config/config.php';
+require dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../config/config.php';
 
 class AlipayTradeService {
 
@@ -91,103 +88,6 @@ class AlipayTradeService {
 	}
 	function AlipayWapPayService($alipay_config) {
 		$this->__construct($alipay_config);
-	}
-	
-	// 当面付2.0条码支付(带轮询逻辑)
-	public function barPay($req) {
-
-		$outTradeNo = $req->getOutTradeNo();
-		$bizContent = $req->getBizContent();
-
-		$appAuthToken = $req->getAppAuthToken();
-
-		$this->writeLog($bizContent);
-
-		//echo $bizContent;
-		
-		$request = new AlipayTradePayRequest();
-		$request->setBizContent ( $bizContent );
-
-
-		$response = $this->aopclientRequestExecute ( $request , NULL , $appAuthToken);
-
-		//获取alipay_trade_pay_response对象数据,方便后续处理
-		$response = $response->alipay_trade_pay_response;
-
-		$result = new AlipayF2FPayResult($response);
-
-		if (!empty($response)&&("10000" == $response->code)) {
-			// 支付交易明确成功
-			$result->setTradeStatus("SUCCESS");
-
-		} elseif (!empty($response)&&("10003" == $response->code)) {
-			// 返回用户处理中，则轮询查询交易是否成功，如果查询超时，则调用撤销
-			$queryContentBuilder = new AlipayTradeQueryContentBuilder();
-			$queryContentBuilder->setOutTradeNo($outTradeNo);
-			$queryContentBuilder->setAppAuthToken($appAuthToken);
-
-			$loopQueryResponse = $this->loopQueryResult($queryContentBuilder);
-			return $this->checkQueryAndCancel($outTradeNo, $appAuthToken, $result, $loopQueryResponse);
-
-		} elseif ($this->tradeError($response)) {
-			// 系统错误或者网络异常未响应，则查询一次交易，如果交易没有支付成功，则调用撤销
-			$queryContentBuilder = new AlipayTradeQueryContentBuilder();
-			$queryContentBuilder->setOutTradeNo($outTradeNo);
-			$queryContentBuilder->setAppAuthToken($appAuthToken);
-
-			$queryResponse = $this->query($queryContentBuilder);
-
-			return $this->checkQueryAndCancel($outTradeNo, $appAuthToken, $result, $queryResponse);
-
-		} else {
-			// 其他情况表明该订单支付明确失败
-			$result->setTradeStatus("FAILED");
-		}
-
-		return $result;
-
-	}
-
-	// 当面付2.0消费查询
-	public function queryTradeResult($req){
-		$response = $this->query($req);
-		$result = new AlipayF2FQueryResult($response);
-
-		if($this->querySuccess($response)){
-			// 查询返回该订单交易支付成功
-			$result->setTradeStatus("SUCCESS");
-
-		} elseif ($this->tradeError($response)){
-			//查询发生异常或无返回，交易状态未知
-			$result->setTradeStatus("UNKNOWN");
-		} else {
-			//其他情况均表明该订单号交易失败
-			$result->setTradeStatus("FAILED");
-		}
-		return $result;
-
-	}
-
-	// 当面付2.0消费退款,$req为对象变量
-	public function refund($req) {
-		$bizContent = $req->getBizContent();
-		$this->writeLog($bizContent);
-		$request = new AlipayTradeRefundRequest();
-		$request->setBizContent ( $bizContent );
-		$response = $this->aopclientRequestExecute ( $request , NULL ,$req->getAppAuthToken());
-
-		$response = $response->alipay_trade_refund_response;
-
-		$result = new AlipayF2FRefundResult($response);
-		if(!empty($response)&&("10000"==$response->code)){
-			$result->setTradeStatus("SUCCESS");
-		} elseif ($this->tradeError($response)){
-			$result->setTradeStatus("UNKNOWN");
-		} else {
-			$result->setTradeStatus("FAILED");
-		}
-
-		return $result;
 	}
 
 	//当面付2.0预下单(生成二维码,带轮询)
@@ -356,29 +256,19 @@ class AlipayTradeService {
 	function writeLog($text) {
 		// $text=iconv("GBK", "UTF-8//IGNORE", $text);
 		//$text = characet ( $text );
-		//file_put_contents ( "log/log.txt", date ( "Y-m-d H:i:s" ) . "  " . $text . "\r\n", FILE_APPEND );
+		file_put_contents ( "log/log.txt", date ( "Y-m-d H:i:s" ) . "  " . $text . "\r\n", FILE_APPEND );
 	}
 
-	/** *利用google api生成二维码图片
+	/** *利用baidu云盘 api生成二维码图片
 	 * $content：二维码内容参数
 	 * $size：生成二维码的尺寸，宽度和高度的值
 	 * $lev：可选参数，纠错等级
 	 * $margin：生成的二维码离边框的距离
 	 */
-	function create_erweima($content, $size = '200', $lev = 'L', $margin= '0') {
-		$content = urlencode($content);
-		$image = '<img src="http://chart.apis.google.com/chart?chs='.$size.'x'.$size.'&amp;cht=qr&chld='.$lev.'|'.$margin.'&amp;chl='.$content.'"  widht="'.$size.'" height="'.$size.'" />';
+		function create_erweima($content, $size = '200', $lev = 'L', $margin= '0') {
+		$url = urlencode($content);
+		$image = '<a href="'.$content.'" target="_blank"><img src="https://pan.baidu.com/share/qrcode?w='.$size.'&amp;h='.$size.'&amp;url='.$url.'"  widht="'.$size.'" height="'.$size.'" />';
 		return $image;
-	}
-	
-	function create_erweima64($content, $size = '200', $lev = 'L', $margin= '0') {
-		$content = urlencode($content);
-		$imageurl = 'http://chart.apis.google.com/chart?chs='.$size.'x'.$size.'&cht=qr&chld='.$lev.'|'.$margin.'&chl='.$content;
-		$image_data = file_get_contents($imageurl);
-		$image_info = getimagesize($imageurl);
-		$base64_image = 'data:' . $image_info['mime'] . ';base64,' . chunk_split(base64_encode($image_data));
-		$qrcode = '<img src="'.$base64_image.'" >';
-		return $qrcode;
 	}
 
 }
